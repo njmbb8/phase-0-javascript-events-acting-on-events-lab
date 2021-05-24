@@ -22,6 +22,17 @@ function moveDodgerRight() {
         dodger.style.left = `${left + 10}px`;
     }
 }
+
+function moveDodgerUp(){
+    const bottomNumbers = dodger.style.bottom.replace("px", "");
+    const bottom = parseInt(bottomNumbers);
+    const game = document.getElementById('game');
+    const gameTop = game.offsetHeight;
+    
+    if(bottom < (gameTop - dodger.offsetHeight)){
+        dodger.style.bottom = `${bottom + 10}px`;
+    }
+}
     
 
 document.addEventListener("keydown", function(e) {
@@ -30,5 +41,8 @@ document.addEventListener("keydown", function(e) {
     }
     else if(e.key == "ArrowRight"){
         moveDodgerRight();
+    }
+    else if(e.key == "ArrowUp"){
+        moveDodgerUp();
     }
 })
