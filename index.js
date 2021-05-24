@@ -33,6 +33,14 @@ function moveDodgerUp(){
         dodger.style.bottom = `${bottom + 10}px`;
     }
 }
+
+function moveDodgerDown() {
+    const bottomNumbers = dodger.style.bottom.replace("px", '');
+    const bottom = parseInt(bottomNumbers);
+    if(bottom > 0){
+        dodger.style.bottom = `${bottom - 10}px`;
+    }
+}
     
 
 document.addEventListener("keydown", function(e) {
@@ -44,5 +52,8 @@ document.addEventListener("keydown", function(e) {
     }
     else if(e.key == "ArrowUp"){
         moveDodgerUp();
+    }
+    else if(e.key == "ArrowDown"){
+        moveDodgerDown();
     }
 })
